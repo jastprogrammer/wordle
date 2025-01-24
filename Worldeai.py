@@ -11,10 +11,10 @@ def wordle():
         if len(guess) != 5:
             print("Wrong word length, try again.")
         else:
-             if guess == word:
+            if guess == word:
                  print("Congratulations, you won!")
                  break
-             for i in range(len(word)):
+            for i in range(len(word)):
                 if guess[i] == word[i]:
                      display[i] = guess[i]
                      print("\033[1;32;40m",guess[i],"\033[0m", end=" ")
@@ -22,10 +22,10 @@ def wordle():
                     display[i] = "_"
                     print("\033[1;33;40m",guess[i],"\033[0m", end=" ")
                 else:
-                    display[i] = "_"
-                    print(display[i], end=" ")
-        print("\nWrong word, try again.\n")
-        tries -= 1
+                    display[i] = guess[i]
+                    print(guess[i], end=" ")
+            print("\nWrong word, try again.\n")
+            tries -= 1
     if tries == 0:
         print("Game over, the word was ", word)
 
